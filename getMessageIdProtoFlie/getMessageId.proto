@@ -1,0 +1,24 @@
+syntax = "proto3"; // Appoint proto Edition
+
+package getMessageId_proto;
+
+option go_package = "./;getMessageIGrpcGateway";
+
+import "google/api/annotations.proto";
+
+service GetMessageIdService {
+  rpc GetMessageId(GetMessageRequest) returns (GetMessageResponse) {
+    option (google.api.http) = {
+      post : "/getMessageIdHttpApi"
+      body : "*"
+    };
+  }
+}
+
+message GetMessageRequest {
+  string UserId = 1;
+}
+
+message GetMessageResponse {
+  string UserMessageId = 1;
+}
