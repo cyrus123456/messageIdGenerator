@@ -17,6 +17,7 @@ service GetMessageIdService {
 
 message GetMessageRequest {
   string UserId = 1;
+  string SectionId = 2;
 }
 
 message GetMessageResponse {
