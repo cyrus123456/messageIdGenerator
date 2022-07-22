@@ -11,15 +11,15 @@ var Redisdb *redis.Client
 func init() {
 	Redisdb = redis.NewClient(
 		&redis.Options{
-			// Addr:     "localhost:6379", // 指定
+			// Addr:     "localhost:49153", // 指定
 			// Password: "",
 			// DB:       0, // redis一共16个库，指定其中一个库即可
 
 			//连接信息
-			Network:  "tcp",            //网络类型，tcp or unix，默认tcp
-			Addr:     "127.0.0.1:6379", //主机名+冒号+端口，默认localhost:6379
-			Password: "",               //密码
-			DB:       0,                // redis数据库index
+			Network:  "tcp",             //网络类型，tcp or unix，默认tcp
+			Addr:     "127.0.0.1:49153", //主机名+冒号+端口，默认localhost:49153
+			Password: "redispw",         //密码
+			DB:       0,                 // redis数据库index
 
 			//连接池容量及闲置连接数量
 			PoolSize:     15, // 连接池最大socket连接数，默认为4倍CPU数， 4 * runtime.NumCPU
@@ -47,12 +47,12 @@ func init() {
 			// 		Timeout:   5 * time.Second,
 			// 		KeepAlive: 5 * time.Minute,
 			// 	}
-			// 	return netDialer.Dial("tcp", "127.0.0.1:6379")
+			// 	return netDialer.Dial("tcp", "127.0.0.1:49153")
 			// },
 
 			//钩子函数
 			// OnConnect: func(conn *redis.Conn) error { //仅当客户端执行命令时需要从连接池获取连接时，如果连接池需要新建连接时则会调用此钩子函数
-			// 	fmt.Printf("conn=%v\n", conn)
+			// 	fmt.Printf("conn=%v", conn)
 			// 	return nil
 			// },
 		},

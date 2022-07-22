@@ -18,7 +18,7 @@ func init() {
 		"root:123456@tcp(127.0.0.1:3306)/text",
 	)
 	if err != nil {
-		log.Println("mysql数据库链接失败", err)
+		log.Println("mysql数据库链接失败👺", err)
 	} else {
 		log.Println("mysql数据库链接成功")
 	}
@@ -30,7 +30,7 @@ func init() {
 	// 尝试与数据库建立连接（校验DSN是否正确）
 	err = MysqlDbConn.Ping()
 	if err != nil {
-		log.Println("mysql数据库ping失败", err)
+		log.Println("mysql数据库ping失败👺", err)
 	} else {
 		log.Println("mysql数据库ping成功")
 	}
